@@ -17,16 +17,6 @@
   $(function($) {
     $('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 30, headerfix : $('nav')});
     $('.totop').scrollshow({position : 500});
-
-    // モバイルの画面の向きが変化した場合
-    $(window).on("orientationchange",function () {
-      if (window.matchMedia("(orientation: landscape)").matches) {
-        $('#star').html("横画面です。");
-      } else {
-        $('#star').html("縦画面です。");
-      }
-    });
-
   });
   </script>
   <!--[if lt IE 9]>
@@ -42,13 +32,6 @@
     <p>5/3~5に行われるPLISE GW合宿に関するサイトです。</p>
   </div>
 </header>
-
-<div class="cols">
-  <div class="col content">BOX1</div>
-  <div class="col content">BOX2</div>
-  <div class="col content">BOX3</div>
-  <div class="col content">BOX4</div>
-</div>
 
 <nav>
   <ul>
@@ -66,6 +49,10 @@
     <dd>
       <div>TOP画面モック作成</div>
     </dd>
+    <dt><span>2016-05-03</span></dt>
+    <dd>
+      <div>HOMEWORK 更新</div>
+    </dd>
     <dt><span>2016-05-01</span></dt>
     <dd>
       <div>当サイト公開</div>
@@ -74,8 +61,11 @@
   <h2>HOMEWORK</h2>
   <ul>
     <li><a href="member_kobaken.html">小林健人</a></li>
-    <li><a href="top_page.html">TOP</a></li>
   </ul>
+  <h2>HP</h2>
+    <ul>
+      <li><a href="top_page.html">TOP画面モック</a></li>
+    </ul>
 </div><!-- /.contents -->
 
 <div class="totop" style="margin-bottom: 60px;">

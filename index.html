@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   <title>PLISE GW合宿</title>
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes, initial-scale = 1.0">
   <meta name="keywords" content="">
   <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="css/init.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/mobile.css" media="only screen and (min-width: 0px) and (max-width: 797px)">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
   <script type="text/javascript" src="js/jquery.scrollshow.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script>
-  $(function($){
+  $(function($) {
     $('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 30, headerfix : $('nav')});
     $('.totop').scrollshow({position : 500});
+
+    // モバイルの画面の向きが変化した場合
+    $(window).on("orientationchange",function () {
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        $('#star').html("横画面です。");
+      } else {
+        $('#star').html("縦画面です。");
+      }
+    });
+
   });
   </script>
   <!--[if lt IE 9]>
@@ -23,10 +35,20 @@
   <![endif]-->
 </head>
 <body>
-<header>
-  <h1>PLISE GW合宿</h1>
-  <p>5/3~5に行われるPLISE GW合宿に関するサイトです。</p>
+<header class="cols header">
+  <div class="cols-inner">
+    <div id="star"></div>
+    <h1>PLISE GW合宿</h1>
+    <p>5/3~5に行われるPLISE GW合宿に関するサイトです。</p>
+  </div>
 </header>
+
+<div class="cols">
+  <div class="col content">BOX1</div>
+  <div class="col content">BOX2</div>
+  <div class="col content">BOX3</div>
+  <div class="col content">BOX4</div>
+</div>
 
 <nav>
   <ul>
@@ -39,8 +61,12 @@
 
 <div id="contents">
   <h2>INFORMATION</h2>
-    <dl class="information">
-      <dt><span>2016-05-01</span></dt>
+  <dl class="information">
+    <dt><span>2016-05-03</span></dt>
+    <dd>
+      <div>TOP画面モック作成</div>
+    </dd>
+    <dt><span>2016-05-01</span></dt>
     <dd>
       <div>当サイト公開</div>
     </dd>
@@ -48,16 +74,22 @@
   <h2>HOMEWORK</h2>
   <ul>
     <li><a href="member_kobaken.html">小林健人</a></li>
+    <li><a href="top_page.html">TOP</a></li>
   </ul>
-  <div class="photo">
-    <img src="images/action_guide.png" alt="PLISE行動指針">
-  </div>
 </div><!-- /.contents -->
 
-<footer>
-  <div><small>Copyright &#169; 2016 plise-staff.github.io All Rights Reserved.</small></div><!-- /.copyright -->
-</footer>
+<div class="totop" style="margin-bottom: 60px;">
+  <a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a>
+</div><!-- /.totop -->
 
-<div class="totop"><a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a></div><!-- /.totop -->
+<footer class="cols footer">
+  <div class="col search">
+    <form name="searchform" class="search-form" method="get" action="#">
+      <input name="keywords" id="keywords" value="" type="text" />
+      <input type="image" src="images/btn2.gif" alt="検索" name="searchBtn" id="searchBtn" />
+    </form>
+  </div>
+  <div class="col"><small id="copyright">Copyright &#169; 2016 plise lab. All Rights Reserved.</small></div><!-- /.copyright -->
+</footer>
 </body>
 </html>

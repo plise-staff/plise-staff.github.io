@@ -8,15 +8,16 @@
   <meta name="description" content="">
   <link rel="stylesheet" type="text/css" href="css/init.css">
   <link rel="stylesheet" type="text/css" href="css/top.css">
-  <script type="text/javascript" src="js/jquery.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">  <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/footerFixed.js"></script>
   <script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
   <script type="text/javascript" src="js/jquery.scrollshow.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
   <script>
   $(function($) {
     $('html').smoothscroll({easing : 'swing', speed : 1000, margintop : 30, headerfix : $('nav')});
     $('.totop').scrollshow({position : 500});
+
+    $('#menubtn').on('click', () => $('#menu').slideToggle());
   });
   </script>
   <!--[if lt IE 9]>
@@ -25,51 +26,64 @@
   <![endif]-->
 </head>
 <body>
-<div class="wrapper">
-  <header class="cols header">
-    <div class="cols-inner">
-      <div class="col">サイト名</div>
-      <div class="col">ナビゲーション・メニュー</div>
-    </div>
-  </header>
-
-  <div class="cols topimg">
-    <div class="col"><img src="images/photo01.jpg" alt="家" width="100%" height="300"></div>
-  </div>
-
-  <div class="cols topmsg">
-    <div class="cols-inner">
-      <div class="col">メッセージ</div>
-    </div>
-  </div>
-
-  <div class="cols overview">
-    <div class="cols-inner">
-      <div class="col content">小学生向けコンテンツ</div>
-      <div class="col content">中学生向けコンテンツ</div>
-      <div class="col content">高校生向けコンテンツ</div>
-      <div class="col content">大学生向け</div>
-    </div>
-  </div>
-
-  <div class="totop" style="margin-bottom: 60px;">
-    <div class="cols-inner">
-      <a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a>
-    </div>
-  </div><!-- /.totop -->
-
-  <footer id="footer" class="cols footer">
-    <div class="cols-inner">
-      <div class="col search">
-        <form name="searchform" class="search-form" method="get" action="#">
-          <input name="keywords" id="keywords" value="" type="text" />
-          <input type="image" src="images/btn2.gif" alt="検索" name="searchBtn" id="searchBtn" />
-        </form>
+<header class="cols header">
+  <div class="cols-inner">
+    <div class="col">
+      <div class="logo">
+        <h1><a href="#"><span>PLISE</span></a></h1>
       </div>
-      <div class="col">SNSメニュー<br><small id="copyright">Copyright &#169; 2016 plise lab. All Rights Reserved.</small></div><!-- /.copyright -->
     </div>
-  </footer>
+    <div class="col">
+      <button type="button" class="menu-btn" id="menubtn">
+        <i class="fa fa-bars"></i><span>MENU</span>
+      </button>
+      <nav class="menu" id="menu">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="http://plise.co.jp/">COMPANY</a></li>
+          <li><a href="http://plise.hateblo.jp/">BLOG</a></li>
+          <li><a href="http://plise.co.jp/contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="cols topimg">
+  <div class="col"><img src="images/photo01.jpg" alt="家" width="100%" height="300"></div>
 </div>
 
+<div class="cols topmsg">
+  <div class="cols-inner">
+    <div class="col">メッセージ</div>
+  </div>
+</div>
+
+<div class="cols overview">
+  <div class="cols-inner">
+    <div class="col content">小学生向けコンテンツ</div>
+    <div class="col content">中学生向けコンテンツ</div>
+    <div class="col content">高校生向けコンテンツ</div>
+    <div class="col content">大学生向け</div>
+  </div>
+</div>
+
+<div class="totop" style="margin-bottom: 60px;">
+  <div class="cols-inner">
+    <a href="#"><img src="images/totop.png" alt="ページのトップへ戻る"></a>
+  </div>
+</div><!-- /.totop -->
+
+<footer id="footer" class="cols footer">
+  <div class="cols-inner">
+    <div class="col search">
+      <form name="searchform" class="search-form" method="get" action="#">
+        <input name="keywords" id="keywords" value="" type="text" />
+        <input type="image" src="images/btn2.gif" alt="検索" name="searchBtn" id="searchBtn" />
+      </form>
+    </div>
+    <div class="col">SNSメニュー<br><small id="copyright">Copyright &#169; 2016 PLISE,inc. All Rights Reserved.</small></div><!-- /.copyright -->
+  </div>
+</footer>
 </body>
 </html>
